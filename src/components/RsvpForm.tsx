@@ -58,7 +58,7 @@ export default function RsvpForm() {
   };
 
   return (
-    <section id="rsvp" data-background-video="2" className="bg-[#20211d]/85 py-24 sm:py-32 lg:py-40">
+    <section id="rsvp" data-background-video="2" className="py-24 sm:py-32 lg:py-40">
       <div className="section-shell">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div className="lg:sticky lg:top-10 lg:self-start">
