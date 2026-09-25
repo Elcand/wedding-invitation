@@ -25,10 +25,10 @@ export default function Hero() {
         <nav className="flex items-center justify-between" aria-label={t("nav.mainAria")}>
           <a href="#home" className="group flex items-center gap-3" aria-label={t("nav.homeAria")}>
             <span className="flex h-10 w-10 items-center justify-center border border-[#f5f2eb]/35 font-display text-lg tracking-tight text-[#f5f2eb] transition-colors group-hover:border-[#e0c79c] group-hover:text-[#e0c79c]">
-              J<span className="mx-0.5 text-[#c9aa7a]">&amp;</span>G
+              G<span className="mx-0.5 text-[#c9aa7a]">&amp;</span>Y
             </span>
             <span className="hidden text-[0.6rem] font-semibold uppercase tracking-[0.28em] text-[#f5f2eb]/65 sm:block">
-              Jonathan <span className="text-[#c9aa7a]">&amp;</span> Georgia
+              Gabriel <span className="text-[#c9aa7a]">&amp;</span> Yunita
             </span>
           </a>
           <div className="hidden items-center gap-8 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-[#f5f2eb]/70 md:flex">
@@ -62,13 +62,13 @@ export default function Hero() {
         >
           <p className="eyebrow mb-7">{t("hero.kicker")}</p>
           <h1 className="max-w-5xl font-display text-[clamp(4rem,13vw,11rem)] font-medium leading-[0.78] tracking-[-0.055em] text-[#f5f2eb]">
-            Jonathan
+            Gabriel
             <span className="mx-2 inline-block text-[0.55em] font-normal italic text-[#e0c79c] sm:mx-4">&amp;</span>
-            <span className="block sm:inline-block">Georgia</span>
+            <span className="block sm:inline-block">Yunita</span>
           </h1>
           <div className="mt-9 flex items-center gap-4 text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[#f5f2eb]/75 sm:mt-12">
             <span className="h-px w-8 bg-[#c9aa7a]/80" />
-            <span>30 · 08 · 2026</span>
+            <span>06 · 03 · 2027</span>
             <span className="h-px w-8 bg-[#c9aa7a]/80" />
           </div>
           <p className="mt-6 max-w-md text-xs leading-6 text-[#f5f2eb]/65 sm:text-sm">
