@@ -27,7 +27,7 @@ const galleryItems = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="bg-[#171815] py-24 sm:py-32 lg:py-40">
+    <section id="gallery" data-background-video="1" className="bg-[#171815]/85 py-24 sm:py-32 lg:py-40">
       <div className="section-shell">
         <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
           <div>

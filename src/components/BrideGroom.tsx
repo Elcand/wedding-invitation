@@ -24,7 +24,7 @@ const couple = [
 
 export default function BrideGroom() {
   return (
-    <section id="couple" className="bg-[#f5f2eb] py-24 text-[#171815] sm:py-32 lg:py-40">
+    <section id="couple" data-background-video="1" className="bg-[#f5f2eb]/80 py-24 text-[#171815] sm:py-32 lg:py-40">
       <div className="section-shell">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>

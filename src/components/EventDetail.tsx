@@ -63,7 +63,7 @@ export default function EventDetail() {
   };
 
   return (
-    <section id="details" className="relative bg-[#171815] py-24 sm:py-32 lg:py-40">
+    <section id="details" data-background-video="2" className="relative bg-[#171815]/85 py-24 sm:py-32 lg:py-40">
       <div className="section-shell">
         <div className="flex flex-col justify-between gap-8 border-b border-[#f5f2eb]/15 pb-10 sm:flex-row sm:items-end">
           <div>

@@ -10,7 +10,7 @@ import Wishes from "@/components/Wishes";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden bg-[#171815] text-[#f5f2eb]">
+    <main className="relative z-10 overflow-hidden bg-transparent text-[#f5f2eb]">
       <AudioPlayer />
       <Hero />
       <BrideGroom />

@@ -21,7 +21,7 @@ const milestones = [
 
 export default function Story() {
   return (
-    <section id="story" className="bg-[#e7e1d5] py-24 text-[#171815] sm:py-32 lg:py-40">
+    <section id="story" data-background-video="0" className="bg-[#e7e1d5]/80 py-24 text-[#171815] sm:py-32 lg:py-40">
       <div className="section-shell">
         <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
           <div className="lg:sticky lg:top-10 lg:self-start">

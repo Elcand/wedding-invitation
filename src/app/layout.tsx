@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import type { ReactNode } from "react";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import "./globals.css";
 
 const displayFont = Cormorant_Garamond({
@@ -34,7 +35,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="id" className={`${displayFont.variable} ${bodyFont.variable}`}>
-      <body>{children}</body>
+      <body className="relative min-h-screen overflow-x-hidden text-stone-100 antialiased selection:bg-amber-200 selection:text-stone-900">
+        <BackgroundVideo />
+        {children}
+      </body>
     </html>
   );
 }

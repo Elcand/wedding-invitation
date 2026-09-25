@@ -31,7 +31,7 @@ export default function AudioPlayer() {
       <button
         type="button"
         onClick={togglePlay}
-        aria-label={isPlaying ? "Jeda musik" : "Putar musik"}
+        aria-label={isPlaying ? "Pause music" : "Play music"}
         aria-pressed={isPlaying}
         className="group flex h-12 w-12 items-center justify-center rounded-full border border-[#e0c79c]/35 bg-[#171815]/75 text-[#e0c79c] shadow-[0_12px_30px_rgba(0,0,0,0.25)] backdrop-blur-md transition-all hover:border-[#e0c79c] hover:bg-[#e0c79c] hover:text-[#171815]"
       >

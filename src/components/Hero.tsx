@@ -14,19 +14,7 @@ const reveal = {
 
 export default function Hero() {
   return (
-    <section id="home" className="hero-section flex flex-col text-[#f5f2eb]">
-      <video
-        className="hero-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster="/assets/photos/photo-placehoder1.jpg"
-        aria-hidden="true"
-      >
-        <source src="/assets/videos/video-placeholder.mp4" type="video/mp4" />
-      </video>
+    <section id="home" data-background-video="0" className="hero-section flex flex-col text-[#f5f2eb]">
       <div className="hero-vignette" aria-hidden="true" />
 
       <div className="relative z-10 flex min-h-[100svh] flex-col px-5 py-5 sm:px-8 sm:py-7 lg:px-12">

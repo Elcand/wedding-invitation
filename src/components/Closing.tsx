@@ -7,7 +7,7 @@ const CHECK_IN_URL = "https://maps.google.com/?q=The+Pearl+Hotel+Jakarta";
 
 export default function Closing() {
   return (
-    <footer className="bg-[#171815] py-24 text-[#f5f2eb] sm:py-32 lg:py-40">
+    <footer id="closing" data-background-video="1" className="bg-[#171815]/85 py-24 text-[#f5f2eb] sm:py-32 lg:py-40">
       <div className="section-shell">
         <div className="grid gap-14 lg:grid-cols-[1fr_0.7fr] lg:items-end lg:gap-24">
           <div>
