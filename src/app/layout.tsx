@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import type { ReactNode } from "react";
 import BackgroundVideo from "@/components/BackgroundVideo";
+import { LanguageProvider } from "@/lib/language";
 import "./globals.css";
 
 const displayFont = Cormorant_Garamond({
@@ -19,12 +20,12 @@ const bodyFont = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Jonathan & Georgia — 30 Agustus 2026",
-    template: "%s | Jonathan & Georgia",
+    default: "Gabriel & Yunita — 6 March 2027",
+    template: "%s | Gabriel & Yunita",
   },
   description:
-    "Editorial digital wedding invitation untuk Jonathan & Georgia. Temukan perjalanan cinta, detail acara, dan konfirmasi kehadiran Anda.",
-  keywords: ["undangan pernikahan", "wedding invitation", "Jonathan", "Georgia"],
+    "Editorial digital wedding invitation untuk Gabriel & Yunita. Discover our love story, event details, and RSVP.",
+  keywords: ["undangan pernikahan", "wedding invitation", "Gabriel", "Yunita"],
 };
 
 export const viewport: Viewport = {
@@ -36,8 +37,10 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html lang="id" className={`${displayFont.variable} ${bodyFont.variable}`}>
       <body className="relative min-h-screen overflow-x-hidden text-stone-100 antialiased selection:bg-amber-200 selection:text-stone-900">
-        <BackgroundVideo />
-        {children}
+        <LanguageProvider>
+          <BackgroundVideo />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

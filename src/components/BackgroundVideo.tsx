@@ -89,7 +89,7 @@ export default function BackgroundVideo() {
       ))}
       <div className="absolute inset-0 bg-[#171815]/5" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_10%,rgba(23,24,21,0.48)_100%)]" />
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#171815]/45 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-[#171815]/45 to-transparent" />
     </div>
   );
 }
