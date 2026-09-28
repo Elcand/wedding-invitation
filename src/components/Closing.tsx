@@ -54,8 +54,8 @@ export default function Closing() {
               </div>
             </div>
             <div className="mt-6 flex items-center justify-between gap-4 text-[0.6rem] uppercase tracking-[0.2em] text-[#f5f2eb]/40">
-              <span>Jonathan &amp; Georgia</span>
-              <span>30 · 08 · 26</span>
+              <span>Gabriel &amp; Yunita</span>
+              <span>06 · 03 · 27</span>
             </div>
           </div>
         </div>
