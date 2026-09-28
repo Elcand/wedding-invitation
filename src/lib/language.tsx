@@ -148,6 +148,8 @@ const translations = {
     "language.switchToId": "Ganti ke Bahasa Indonesia",
     "audio.play": "Putar musik",
     "audio.pause": "Jeda musik",
+    "audio.mute": "Bisukan musik",
+    "audio.unmute": "Aktifkan musik",
     "audio.musicOn": "Musik aktif",
   },
   en: {
@@ -285,6 +287,8 @@ const translations = {
     "language.switchToId": "Switch to Indonesian",
     "audio.play": "Play music",
     "audio.pause": "Pause music",
+    "audio.mute": "Mute music",
+    "audio.unmute": "Unmute music",
     "audio.musicOn": "Music on",
   },
 } as const;
