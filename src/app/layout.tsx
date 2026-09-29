@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   description:
     "Editorial digital wedding invitation untuk Gabriel & Yunita. Discover our love story, event details, and RSVP.",
   keywords: ["undangan pernikahan", "wedding invitation", "Gabriel", "Yunita"],
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export const viewport: Viewport = {

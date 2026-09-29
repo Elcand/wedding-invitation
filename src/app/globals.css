@@ -244,6 +244,26 @@ img {
   }
 }
 
+@media (max-width: 768px) {
+  body::before {
+    display: none;
+  }
+
+  .glass-panel {
+    backdrop-filter: blur(10px);
+  }
+
+  .image-frame img {
+    transition: none;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .image-frame:hover img {
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
