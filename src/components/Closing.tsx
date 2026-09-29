@@ -4,7 +4,7 @@ import { ArrowUpRight, Heart, MapPin, QrCode } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { useLanguage } from "@/lib/language";
 
-const CHECK_IN_URL = "https://maps.google.com/?q=The+Pearl+Hotel+Jakarta";
+const CHECK_IN_URL = "https://maps.google.com/?q=Joglo+Langit+Semarang";
 
 export default function Closing() {
   const { t } = useLanguage();

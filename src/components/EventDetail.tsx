@@ -17,8 +17,8 @@ import {
 import { useLanguage } from "@/lib/language";
 
 const EVENT_DATE = new Date("2026-08-30T09:00:00+07:00");
-const VENUE = "The Pearl Hotel Jakarta";
-const VENUE_ADDRESS = "Jl. Wolter Monginsidi, Kebayoran Baru, Jakarta Selatan";
+const VENUE = "Joglo Langit Semarang";
+const VENUE_ADDRESS = "Jl. Gg. Bharadaksa II Jl. Untung Suropati, Kedungpane, Kec. Mijen, Semarang";
 const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(VENUE)}`;
 const BANK_NUMBER = "1234 5678 9012";
 
@@ -132,7 +132,7 @@ export default function EventDetail() {
               </div>
               <h3 className="mt-8 font-display text-3xl">{t("event.holyMatrimony")}</h3>
               <p className="mt-2 text-sm text-[#f5f2eb]/55">{t("event.date")}</p>
-              <p className="mt-1 text-sm text-[#f5f2eb]/55">09.00—11.00 WIB</p>
+              <p className="mt-1 text-sm text-[#f5f2eb]/55">08.00—10.00 WIB</p>
               <div className="mt-7 flex items-center gap-2 text-xs text-[#e0c79c]">
                 <MapPin size={14} />
                 <span>{VENUE}</span>
@@ -147,7 +147,7 @@ export default function EventDetail() {
               </div>
               <h3 className="mt-8 font-display text-3xl">{t("event.reception")}</h3>
               <p className="mt-2 text-sm text-[#f5f2eb]/55">{t("event.date")}</p>
-              <p className="mt-1 text-sm text-[#f5f2eb]/55">11.30—15.00 WIB</p>
+              <p className="mt-1 text-sm text-[#f5f2eb]/55">10.00—12.00 WIB</p>
               <div className="mt-7 flex items-center gap-2 text-xs text-[#e0c79c]">
                 <MapPin size={14} />
                 <span>{VENUE}</span>

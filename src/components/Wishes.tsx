@@ -144,7 +144,7 @@ export default function Wishes() {
             <div className="flex items-end justify-between gap-6">
               <div>
                 <p className="eyebrow !text-[#9b7749]">{t("wishes.eyebrow")}</p>
-                <h2 className="mt-5 max-w-2xl font-display text-5xl leading-[0.9] tracking-[-0.04em] sm:text-7xl">
+                <h2 className="mt-5 max-w-2xl font-display text-5xl text-white leading-[0.9] tracking-[-0.04em] sm:text-7xl">
                   {t("wishes.titleTop")}
                   <br />
                   <span className="italic text-[#9b7749]">{t("wishes.titleBottom")}</span>
@@ -165,7 +165,7 @@ export default function Wishes() {
                           {wish.name.slice(0, 1).toUpperCase()}
                         </span>
                         <div>
-                          <p className="text-sm font-semibold">{wish.name}</p>
+                          <p className="text-sm font-semibold text-[#5d5a52]">{wish.name}</p>
                           <p className="mt-1 text-[0.58rem] uppercase tracking-[0.18em] text-[#8b8377]">{formatDate(wish.created_at, language)}</p>
                         </div>
                       </div>
