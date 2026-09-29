@@ -3,9 +3,10 @@
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Check, Loader2, Users } from "lucide-react";
 import { useLanguage } from "@/lib/language";
+import type { Database, RsvpAttendance } from "@/lib/database.types";
 import { supabase } from "@/lib/supabase";
 
-type Attendance = "Attending" | "Not Attending";
+type Attendance = RsvpAttendance;
 type Status = { type: "success" | "error"; message: string } | null;
 
 export default function RsvpForm() {
@@ -33,19 +34,22 @@ export default function RsvpForm() {
       return;
     }
 
-    const { error } = await client.from("rsvp").insert([
-      {
-        name: name.trim(),
-        address: address.trim() || null,
-        attendance,
-        guest_count: guestCount,
-      },
-    ]);
+    const payload: Database["public"]["Tables"]["rsvp"]["Insert"] = {
+      name: name.trim(),
+      address: address.trim() || null,
+      attendance,
+      guest_count: guestCount,
+    };
+
+    const { error } = await client.from("rsvp").insert(payload);
 
     setLoading(false);
 
     if (error) {
-      setStatus({ type: "error", message: t("rsvp.error") });
+      const networkError = error instanceof TypeError || /fetch failed|failed to fetch|network/i.test(error.message);
+      const permissionError = error.code === "42501" || /row-level security|permission denied/i.test(error.message);
+      const message = networkError ? "rsvp.network" : permissionError ? "rsvp.permission" : "rsvp.error";
+      setStatus({ type: "error", message: t(message) });
       return;
     }
 
@@ -97,6 +101,8 @@ export default function RsvpForm() {
                   className="form-control"
                   type="text"
                   placeholder={t("rsvp.namePlaceholder")}
+                  minLength={2}
+                  maxLength={120}
                   value={name}
                   onChange={(event) => setName(event.target.value)}
                   required
@@ -112,6 +118,7 @@ export default function RsvpForm() {
                   className="form-control"
                   type="text"
                   placeholder={t("rsvp.cityPlaceholder")}
+                  maxLength={500}
                   value={address}
                   onChange={(event) => setAddress(event.target.value)}
                 />

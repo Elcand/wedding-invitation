@@ -29,7 +29,7 @@ const couple = [
     image: "/assets/photos/photo-placeholder2.jpg",
     alt: "Yunita",
     position: "object-[64%_48%]",
-    instagram: "https://www.instagram.com/theothersideof_unay/",
+    instagram: "https://www.instagram.com/ywidhantari/",
   },
 ];
 
