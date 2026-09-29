@@ -61,7 +61,10 @@ export default function Closing() {
         </div>
 
         <div className="mt-20 flex flex-col items-center justify-between gap-5 border-t border-[#f5f2eb]/15 pt-6 text-center sm:flex-row sm:text-left">
-          <p className="text-[0.6rem] uppercase tracking-[0.2em] text-[#f5f2eb]/35">{t("closing.made")}</p>
+          <div className="space-y-2">
+            <p className="text-[0.6rem] uppercase tracking-[0.2em] text-[#f5f2eb]/35">{t("closing.made")}</p>
+            <p className="text-[0.6rem] tracking-[0.12em] text-[#f5f2eb]/30">{t("closing.copyright").replace("{year}", String(new Date().getFullYear()))}</p>
+          </div>
           <a href="#home" className="group inline-flex items-center gap-2 text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-[#c9aa7a]">
             {t("closing.back")}
             <ArrowUpRight size={13} className="transition-transform group-hover:-translate-y-0.5" />
