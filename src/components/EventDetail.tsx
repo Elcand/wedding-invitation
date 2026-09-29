@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/lib/language";
 
-const EVENT_DATE = new Date("2026-08-30T09:00:00+07:00");
+const EVENT_DATE = new Date("2027-03-06T08:00:00+07:00");
 const VENUE = "Joglo Langit Semarang";
 const VENUE_ADDRESS = "Jl. Gg. Bharadaksa II Jl. Untung Suropati, Kedungpane, Kec. Mijen, Semarang";
 const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(VENUE)}`;
