@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import { Heart, Loader2, MessageCircle, Radio, Send } from "lucide-react";
+import { ChevronLeft, ChevronRight, Heart, Loader2, MessageCircle, Radio, Send } from "lucide-react";
 import { useLanguage } from "@/lib/language";
 import { supabase } from "@/lib/supabase";
 
@@ -36,6 +36,36 @@ const initialWishes: Wish[] = [
 const formatDate = (value: string, language: "id" | "en") =>
   new Intl.DateTimeFormat(language === "id" ? "id-ID" : "en-US", { day: "numeric", month: "short" }).format(new Date(value));
 
+const getWishPageSize = (message: string) => {
+  const wordCount = message.trim().split(/\s+/).filter(Boolean).length;
+  if (wordCount > 100) return 2;
+  if (wordCount > 50) return 3;
+  return 4;
+};
+
+function buildWishPages(wishes: Wish[], getMessage: (wish: Wish) => string) {
+  const pages: Wish[][] = [];
+  let currentPage: Wish[] = [];
+
+  for (const wish of wishes) {
+    const wishCapacity = getWishPageSize(getMessage(wish));
+    const pageCapacity = currentPage.reduce(
+      (minimum, currentWish) => Math.min(minimum, getWishPageSize(getMessage(currentWish))),
+      wishCapacity,
+    );
+
+    if (currentPage.length > 0 && currentPage.length >= pageCapacity) {
+      pages.push(currentPage);
+      currentPage = [wish];
+    } else {
+      currentPage.push(wish);
+    }
+  }
+
+  if (currentPage.length > 0) pages.push(currentPage);
+  return pages;
+}
+
 export default function Wishes() {
   const { language, t } = useLanguage();
   const [wishes, setWishes] = useState<Wish[]>(initialWishes);
@@ -44,6 +74,7 @@ export default function Wishes() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
   const [isLive, setIsLive] = useState(Boolean(supabase));
+  const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
     const client = supabase;
@@ -136,6 +167,15 @@ export default function Wishes() {
     return wish.message;
   };
 
+  const pages = buildWishPages(wishes, getWishMessage);
+  const activePage = Math.min(currentPage, Math.max(pages.length - 1, 0));
+  const visibleWishes = pages[activePage] ?? [];
+  const pageCount = pages.length;
+
+  const goToPage = (page: number) => {
+    setCurrentPage(Math.max(0, Math.min(page, pageCount - 1)));
+  };
+
   return (
     <section id="wishes" data-background-video="0" className="text-[#171815] sm:py-32 lg:py-40">
       <div className="section-shell">
@@ -153,11 +193,11 @@ export default function Wishes() {
               <MessageCircle size={22} className="mb-1 hidden text-[#9b7749] sm:block" strokeWidth={1.2} />
             </div>
 
-            <div className="mt-12 space-y-4">
+            <div className="mt-12 h-[32rem] max-h-[70vh] space-y-4 overflow-y-auto pr-1 hide-scrollbar sm:h-[38rem]">
               {wishes.length === 0 ? (
                 <p className="border-y border-[#171815]/15 py-8 text-sm text-[#5d5a52]">{t("wishes.empty")}</p>
               ) : (
-                wishes.map((wish) => (
+                visibleWishes.map((wish) => (
                   <article key={wish.id} className="border-t border-[#171815]/15 py-5 first:border-t-0">
                     <div className="flex items-start justify-between gap-5">
                       <div className="flex items-center gap-3">
@@ -176,6 +216,34 @@ export default function Wishes() {
                 ))
               )}
             </div>
+
+            {wishes.length > 0 && (
+              <div className="mt-8 flex items-center justify-between gap-4 border-t border-[#171815]/15 pt-5">
+                <button
+                  type="button"
+                  onClick={() => goToPage(activePage - 1)}
+                  disabled={activePage === 0}
+                  aria-label={t("wishes.previous")}
+                  className="inline-flex items-center gap-1 text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-[#8b6a43] transition-colors hover:text-[#171815] disabled:cursor-not-allowed disabled:opacity-30"
+                >
+                  <ChevronLeft size={14} />
+                  <span className="hidden sm:inline">{t("wishes.previous")}</span>
+                </button>
+                <p className="text-[0.6rem] uppercase tracking-[0.16em] text-[#8b8377]">
+                  {t("wishes.page").replace("{current}", String(activePage + 1)).replace("{total}", String(pageCount))}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => goToPage(activePage + 1)}
+                  disabled={activePage === pageCount - 1}
+                  aria-label={t("wishes.next")}
+                  className="inline-flex items-center gap-1 text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-[#8b6a43] transition-colors hover:text-[#171815] disabled:cursor-not-allowed disabled:opacity-30"
+                >
+                  <span className="hidden sm:inline">{t("wishes.next")}</span>
+                  <ChevronRight size={14} />
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="lg:pt-20">
