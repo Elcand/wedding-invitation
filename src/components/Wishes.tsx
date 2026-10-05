@@ -193,7 +193,7 @@ export default function Wishes() {
               <MessageCircle size={22} className="mb-1 hidden text-[#9b7749] sm:block" strokeWidth={1.2} />
             </div>
 
-            <div className="mt-12 h-[32rem] max-h-[70vh] space-y-4 overflow-y-auto pr-1 hide-scrollbar sm:h-[38rem]">
+            <div className="mt-12 min-h-[32rem] space-y-4 sm:min-h-[38rem]">
               {wishes.length === 0 ? (
                 <p className="border-y border-[#171815]/15 py-8 text-sm text-[#5d5a52]">{t("wishes.empty")}</p>
               ) : (
