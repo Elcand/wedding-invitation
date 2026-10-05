@@ -122,7 +122,7 @@ export default function Gallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#171815]/70 via-transparent to-transparent opacity-70 transition-opacity group-hover:opacity-90" />
                 <figcaption className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 text-[#f5f2eb] sm:bottom-7 sm:left-7 sm:right-7">
                   <span className="max-w-[13rem] font-display text-2xl italic leading-none sm:text-3xl">{t(item.label)}</span>
-                  <ArrowUpRight size={17} className="shrink-0 text-[#e0c79c]" />
+                  {/* <ArrowUpRight size={17} className="shrink-0 text-[#e0c79c]" /> */}
                 </figcaption>
               </div>
             </figure>
